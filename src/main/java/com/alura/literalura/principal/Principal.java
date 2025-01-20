@@ -88,13 +88,6 @@ public class Principal {
             return;
         }
 
-//        for (var autor : datosLibro.autores()) {
-//            Optional<Autor> autorOptional = autorRepository.obtenerAutorPorNombre(autor.nombre());
-//            if (autorOptional.isEmpty()) {
-//                Autor autorNuevo = new Autor(autor);
-//                autorRepository.save(autorNuevo);
-//            }
-//        }
         Optional<Autor> autor = autorRepository.obtenerAutorPorNombre(datosLibro.autores().get(0).nombre());
         if (autor.isEmpty()) {
             autor = Optional.of(new Autor(datosLibro.autores().get(0)));

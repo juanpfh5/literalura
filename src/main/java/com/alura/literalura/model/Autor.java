@@ -23,8 +23,16 @@ public class Autor {
 
     public Autor(DatosAutor autor) {
         this.nombre = autor.nombre();
-        this.fechaNacimiento = autor.fechaNacimiento();
-        this.fechaFallecimiento = autor.fechaFallecimiento();
+        if (autor.fechaNacimiento() != null) {
+            this.fechaNacimiento = autor.fechaNacimiento();
+        } else {
+            this.fechaNacimiento = 1900;
+        }
+        if (autor.fechaFallecimiento() != null) {
+            this.fechaFallecimiento = autor.fechaFallecimiento();
+        } else {
+            this.fechaFallecimiento = 3000;
+        }
     }
 
     public Long getId() {
